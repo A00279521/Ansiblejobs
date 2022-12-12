@@ -27,11 +27,11 @@
 
   - name: nginxbefore
     debug: 
-       var: printing nginx info to console.before
+       var:nginx_config.path
 
   - name: nginxafter
     debug: 
-       var: printing nginx info to console.after
+       var: nginx_config.path.after
   
   - name: fail if nginx file has been copied over 
     debug: 
