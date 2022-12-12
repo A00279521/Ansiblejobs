@@ -5,7 +5,7 @@
   - name: uninstall nginx
     apt:
       name: nginx
-      state: ansent
+      state: absent
       update_cache: true
 
 
