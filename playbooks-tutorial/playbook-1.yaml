@@ -23,3 +23,9 @@
   - name: printing nginx info to console
     debug:
      msg: "{{ nginx_config }}"
+
+  - name: fail if nginx file has been copied over 
+    service:
+       name: check if copied over
+       msg: fail if nginx file has been copied over
+       when: nginx_config.changed == true
