@@ -10,9 +10,9 @@
     register: valnot1
     failed_when: valnot1.cache_update_time > 1
 
-  - name: nginx debug
-    debug: 
-      var: valnot1
+  # - name: nginx debug
+  #   debug: 
+  #     var: valnot1
 
 
   - name: Copy nginx file over
@@ -30,3 +30,9 @@
   - name: printing nginx info to console
     debug:
      msg: "{{ nginx_config }}"
+
+  - name: uninstall nginx
+    apt:
+      name: nginx
+      # state: present
+      # update_cache: true
