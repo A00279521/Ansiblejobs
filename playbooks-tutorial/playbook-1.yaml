@@ -31,7 +31,7 @@
 
   - name: nginxafter
     debug: 
-       var: nginx_config.path.after
+       var: nginx_config.after
   
   - name: fail if nginx file has been copied over 
     debug: 
