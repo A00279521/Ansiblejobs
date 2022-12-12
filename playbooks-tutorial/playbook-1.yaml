@@ -25,6 +25,7 @@
      msg: "{{ nginx_config }}"
 
   - name: fail if nginx file has been copied over 
-    debug:
-       msg: disable
+    service:
+        state: disable
+        name: nginx_config 
     when: nginx_config.after == nginx_config.before
