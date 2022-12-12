@@ -7,8 +7,13 @@
       name: nginx
       state: present
       update_cache: true
-      register: valnot1
-      failed_when: valnot1.cache_update_time > 1
+    register: valnot1
+    failed_when: valnot1.cache_update_time > 1
+
+  - name: nginx debug
+    debug: 
+      var: valnot1
+
 
   - name: Copy nginx file over
     copy:
