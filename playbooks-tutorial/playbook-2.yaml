@@ -7,7 +7,6 @@
       name: nginx
       state: ansent
       update_cache: true
-    register: valnot1
-    failed_when: valnot1.cache_update_time > 1
+
 
   
