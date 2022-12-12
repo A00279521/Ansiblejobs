@@ -7,6 +7,8 @@
       name: nginx
       state: present
       update_cache: true
+      register: valnot1
+      failed_when: valnot1.cache_update_time > 1
 
   - name: Copy nginx file over
     copy:
@@ -29,10 +31,4 @@
     debug: 
        var: nginx_config.path
 
-  - name: nginxafter
-    debug: 
-       var: nginx_config.after
   
-  - name: fail if nginx file has been copied over 
-    debug: 
-    when: nginx_config.after == nginx_config.before
