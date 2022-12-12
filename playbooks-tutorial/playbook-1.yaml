@@ -25,10 +25,3 @@
   - name: printing nginx info to console
     debug:
      msg: "{{ nginx_config }}"
-
-
-  - name: nginxbefore
-    debug: 
-       var: nginx_config.path
-
-  
