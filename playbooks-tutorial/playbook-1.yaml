@@ -27,7 +27,7 @@
 
   - name: nginxbefore
     debug: 
-       var:nginx_config.path
+       var: nginx_config.path
 
   - name: nginxafter
     debug: 
