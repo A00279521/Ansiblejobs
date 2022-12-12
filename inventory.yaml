@@ -1,0 +1,10 @@
+all:
+  children:
+    test:
+      hosts:
+        ip-172-31-13-63.eu-west-2.compute.internal:
+        ip-172-31-7-209.eu-west-2.compute.internal:
+      vars:
+        ansible_user: ubuntu
+        ansible_ssh_private_key_file: "~/.ssh/ansible_id_rsa"
+       
