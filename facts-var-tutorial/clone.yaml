@@ -5,7 +5,7 @@
   #   path_to_nginx_conf: nginx.conf
   #   nginx_message: ' test my work '
   vars:                                                               # Add
-    path_to_nginx_conf: "https://github.com/A00279521/Ansiblejobs.git"                                # These
+    path_to_nginx_conf: "git clone https://github.com/A00279521/Ansiblejobs.git"                                # These
     # nginx_message: "Hello from Ansible on {{ inventory_hostname }}"   # Line
   tasks:
   # - name: Install NGINX
