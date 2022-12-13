@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  tasks:
+  - name: copy IP of Host
+    host_ip: "{{ansible_default_ipv.address}}"
+    dest: ../clone-repo
+    update: yes
+
+
+
