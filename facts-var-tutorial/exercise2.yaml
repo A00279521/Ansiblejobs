@@ -4,7 +4,7 @@
   become: true
   tasks:
   - name: If OS is Ubuntu
-    hosts: ubuntu
+  - hosts: ubuntu
     gather_facts: yes
     msg: this is ubuntu OS
 
