@@ -1,9 +1,12 @@
 ---
 - hosts: all
   become: true
-  vars: 
-    path_to_nginx_conf: nginx.conf
-    nginx_message: ' test my work '
+  # vars: 
+  #   path_to_nginx_conf: nginx.conf
+  #   nginx_message: ' test my work '
+  vars:                                                               # Add
+    path_to_nginx_conf: "./nginx.conf"                                # These
+    nginx_message: "Hello from Ansible on {{ inventory_hostname }}"   # Line
   tasks:
   - name: Install NGINX
     apt:
