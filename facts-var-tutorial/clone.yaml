@@ -1,32 +1,12 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
   become: true
-  # vars: 
-  #   path_to_nginx_conf: nginx.conf
-  #   nginx_message: ' test my work '
-  vars:                                                               # Add
-    path_to_nginx_conf: "git clone https://github.com/A00279521/Ansiblejobs.git"                                # These
-    # nginx_message: "Hello from Ansible on {{ inventory_hostname }}"   # Line
+  
   tasks:
-  # - name: Install NGINX
-  #   apt:
-  #     name: nginx
-  #     state: latest
-  #     update_cache: true
-  # - name: Start NGINX Service
-  #   service:
-  #     name: nginx
-  #     state: started
-  # - name: Add nginx conf
-  - name: clone a repo
-    template:                          # Replace copy for template
-      src: "{{ path_to_nginx_conf }}"  # Change this line to a variable
-      # dest: /etc/nginx/nginx.conf
+    - name: clone repo
+      git:
+        repo: git clone https://github.com/A00279521/Ansiblejobs.git
       dest: ../clone-repo
-    # notify: Restart nginx
-
-  # handlers:                            #  Add this line 
-  # - name: "Restart nginx"              #  Move
-  #   service:                           #  the restart task to here
-  #     name: "nginx"                    #  to 
-  #     state: "restarted"
+      clone: yes
+      update: yes
