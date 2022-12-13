@@ -4,8 +4,9 @@
   become: true
   tasks:
   - name: Copy IP of Host
-    content: "{{ ansible_default_ipv.address }}"
-    dest: /../clone-repo/new
+    copy: # module name
+      content: "{{ ansible_default_ipv.address }}"
+      dest: /../clone-repo/new
 
    
 
