@@ -3,10 +3,18 @@
   connection: local
   become: true
   tasks:
-  - name: copy IP of Host
-    host_ip: "{{ansible_default_ipv.address}}"
-    dest: ../clone-repo
-    update: yes
+  # - name: copy IP of Host
+  #   host_ip: "{{ansible_default_ipv.address}}"
+  #   dest: ../clone-repo/
+  #   update: yes
+
+  - name: Copy IP of Host
+    src: ./inventory.yaml
+    dest: /../clone-repo/new
+    # owner: foo
+    # group: foo
+   
 
 
 
+ 
