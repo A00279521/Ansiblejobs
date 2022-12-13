@@ -2,11 +2,16 @@
 - hosts: localhost
   connection: local
   become: true
+  # tasks:
+  # - name: Copy IP of Host
+  #   copy: # module name
+  #     content: "{{ ansible_default_ipv4.address }}"
+  #     dest: /../clone-repo/new
+
+- hosts: all
   tasks:
-  - name: Copy IP of Host
-    copy: # module name
-      content: "{{ ansible_default_ipv4.address }}"
-      dest: /../clone-repo/new
+    - debug:
+        var: ansible_default_ipv4
 
    
 
