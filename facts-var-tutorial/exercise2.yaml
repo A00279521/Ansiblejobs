@@ -14,6 +14,11 @@
         var: ansible_default_ipv4.address
         # msg: ansible_default_ipv4.address
 
+    - name: Print all available facts
+      tasks:
+       - debug:
+         var: ansible_facts
+
    
 
 
