@@ -2,11 +2,11 @@
 - hosts: localhost
   connection: local
   become: true
-  
+
   tasks:
-    - name: clone repo
-      git:
-        repo: git clone https://github.com/A00279521/Ansiblejobs.git
-      dest: ../clone-repo
-      clone: yes
-      update: yes
+  - name: clone repo
+    git:
+         repo: https://github.com/A00279521/Ansiblejobs.git
+    dest: ../clone-repo
+    clone: yes
+    update: yes
