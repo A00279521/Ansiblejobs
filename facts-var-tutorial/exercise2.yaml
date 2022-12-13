@@ -3,22 +3,11 @@
   connection: local
   become: true
   tasks:
-  - name: Copy IP of Host
-    copy: # module name
-      content: "{{ ansible_default_ipv4.address }}"
-      dest: ../clone-repo/newfile
+  - name: If OS is Ubuntu
+    hosts: ubuntu
+    gather_facts: yes
+    msg: this is ubuntu OS
 
-- hosts: all
-  tasks:
-    - debug:
-        var: ansible_default_ipv4.address
-- hosts: all
-  tasks:
-   - name: read fact
-     debug:
-         var: ansible_facts
-
-   
 
 
 
