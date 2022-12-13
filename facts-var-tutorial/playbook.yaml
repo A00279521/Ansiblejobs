@@ -3,7 +3,7 @@
   become: true
   vars: 
     path_to_nginx_conf: nginx.conf
-    nginx_message: 'test'
+    nginx_message: ' test my work '
   tasks:
   - name: Install NGINX
     apt:
